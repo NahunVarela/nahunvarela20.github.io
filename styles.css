@@ -1,6 +1,15 @@
+/* Globales */
+*::after,
+*::before,
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     margin: 0 auto;
-    width: 100%;
+    max-width: 1200px;
     font-family: 'Lato';
     color: #333;
 }
@@ -24,9 +33,9 @@ img{
 header{
     display: flex;
     justify-content: space-between;
-   
-	width: 100%;
-	
+    padding: 30px 0 40px 0;
+	width: 1250px;
+	margin-left: 0 auto;
 	background-color:navy;
 	border-radius: 1.5%;
 	color:#FFFFFF;
@@ -141,103 +150,183 @@ header{
     display: none;
 }
 
-.container-items {
+
+
+
+/* Main */
+.container-items{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    padding: 20px;
 }
 
-.item {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #fff;
-    transition: transform 0.3s ease;
+.item{
+    border-radius: 10px;
+   
+	
 }
 
-.item:hover {
-    transform: translateY(-5px);
+.item:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
 }
 
-.item figure {
-    margin: 0;
-    padding: 10px;
-    text-align: center;
-}
-
-.item img {
-    max-width: 100%;
-    height: auto;
+.item img{
+    width: 100%;
+    height: 370px;
     object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
 }
 
-.info-product {
-    padding: 15px;
-    text-align: center;
+.item figure{
+    overflow: hidden;
+	
 }
 
-.info-product h2 {
-    font-size: 18px;
-    margin: 10px 0;
+.item:hover img{
+    transform: scale(1.1);
 }
 
-.info-product .price {
-    font-size: 16px;
-    color: #555;
-}
-
-.btn-add-cart {
-    background-color: #6200ea;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: auto; /* Para que el botón se ajuste automáticamente al final del contenedor */
-}
-
-.btn-add-cart:hover {
-    background-color: #3700b3;
-}
-
-
-
-/* Contenedor de la imagen */
-.image-container {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+.info-product{
+    padding: 10px 30px;
+    line-height: 2;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* Imagen responsiva */
-.responsive-image {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    display: block;
+.price{
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.info-product button{
+    border: none;
+    background: none;
+    background-color: #000;
+    color: #fff;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.cart-empty{
+    padding: 20px;
+    text-align: center;
+	
+}
+
+
+.hidden{
+    display: none;
+}
+
+
+/* Estilos para el encabezado */
+header {
+    width: 100%; /* Ancho completo */
+    height: 90px; /* Altura fija */
+    background-color: #0b132b; /* Color de fondo */
+}
+
+/* Estilos para el contenido interior del encabezado */
+.interior {
+    max-width: 100%; /* Ancho máximo */
+    padding: 0 10px; /* Relleno horizontal */
+    margin: auto; /* Centrar horizontalmente */
+}
+
+/* Estilos para el logotipo */
+.logo {
+    float: left; /* Flotar a la izquierda */
+    padding: 5px 20px 0; /* Relleno */
+}
+
+/* Estilos para la imagen del logotipo */
+.logo img {
+    height: 80px; /* Altura de la imagen */
+}
+
+/* Estilos al pasar el cursor sobre la imagen del logotipo */
+.logo img:hover {
+    transform: scale(1.1); /* Aumentar tamaño al pasar el cursor */
+}
+
+/* Estilos para la navegación */
+.navegacion {
+    float: right; /* Flotar a la derecha */
+    display: flex; /* Utilizar el modelo de caja flexible */
+    align-items: center; /* Alinear verticalmente */
+    min-height: 90px; /* Altura mínima */
+    z-index: 1000; /* Índice Z para posicionamiento */
+}
+
+/* Estilos para la lista no ordenada dentro de la navegación */
+.navegacion ul {
+    list-style: none; /* Quitar viñetas */
+    padding: 0 10px; /* Relleno horizontal */
+}
+
+/* Estilos para cada elemento de la lista dentro de la navegación */
+.navegacion ul li {
+    display: inline-block; /* Mostrar como bloque en línea */
+    position: relative; /* Posición relativa */
+    transition: .3s linear; /* Transición suave */
+    z-index: 1000; /* Índice Z para posicionamiento */
+}
+
+/* Estilos al pasar el cursor sobre cada elemento de la lista dentro de la navegación */
+.navegacion ul li:hover {
+    transform: scale(1.1); /* Aumentar tamaño al pasar el cursor */
+}
+
+/* Estilos para los enlaces dentro de la lista de navegación */
+.navegacion ul li a {
+    color: #ffffff; /* Color de texto blanco */
+    text-align: center; /* Texto centrado */
+    text-transform: uppercase; /* Convertir a mayúsculas */
+    font-size: 14px; /* Tamaño de fuente */
+    font-weight: bold; /* Peso de la fuente */
+    padding: 12px 20px; /* Relleno */
+    transition: .3s linear; /* Transición suave */
+}
+
+/* Estilos al pasar el cursor sobre los enlaces dentro de la lista de navegación */
+.navegacion ul li a:hover {
+    color: #00c9bd; /* Cambiar color de texto al pasar el cursor */
+    transform: scale(1.1); /* Aumentar tamaño al pasar el cursor */
+}
+
+/* Estilos para mostrar los submenús al pasar el cursor sobre cada elemento de la lista dentro de la navegación */
+.navegacion ul li:hover .hijos {
+    display: block; /* Mostrar submenú */
+}
+
+/* Estilos para los submenús */
+.navegacion .submenu .hijos {
+    display: none; /* Ocultar submenú por defecto */
+    background: #0b132b; /* Color de fondo */
+    position: absolute; /* Posición absoluta */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilos para cada elemento de la lista dentro de los submenús */
+.navegacion .submenu .hijos li {
+    display: block; /* Mostrar como bloque */
+    overflow: hidden; /* Ocultar desbordamiento */
+    border-bottom: none; /* Sin borde inferior */
+    font-size: small; /* Tamaño de fuente más pequeño */
+}
+
+/* Estilos para los enlaces dentro de los submenús */
+.navegacion .submenu .hijos li a {
+    display: block; /* Mostrar como bloque */
 }
 
 
 
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .container-items {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 480px) {
-    .container-items {
-        grid-template-columns: 1fr;
-    }
-}
-
-  /*:::::Pie de Pagina*/
+    /*:::::Pie de Pagina*/
 /* Estilos para el pie de página */
 .pie-pagina {
     width: 100%; /* Ancho completo */
@@ -313,4 +402,3 @@ header{
 .pie-pagina .grupo-2 small {
     font-size: 15px; /* Tamaño de fuente */
 }
-
